@@ -1,0 +1,189 @@
+# ============================================================
+# JAVA / SPRING BOOT
+# ============================================================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Spring Boot specific
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Spring Boot application secrets
+src/main/resources/application-local.yml
+src/main/resources/application-local.properties
+src/main/resources/application-dev.yml
+src/main/resources/application-dev.properties
+src/main/resources/application-prod.yml
+src/main/resources/application-prod.properties
+src/main/resources/application-secret*.yml
+src/main/resources/application-secret*.properties
+
+# ============================================================
+# GRADLE
+# ============================================================
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Gradle local properties
+gradle-app.setting
+gradle.properties
+local.properties
+.gradletasknamecache
+
+# ============================================================
+# VSCODE
+# ============================================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+*.code-workspace
+.history/
+
+# ============================================================
+# INTELLIJ IDEA
+# ============================================================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# ============================================================
+# ECLIPSE
+# ============================================================
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# ============================================================
+# DOCKER
+# ============================================================
+.docker/
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
+*.env
+!.env.example
+!.env.template
+
+# Docker secrets / credentials
+docker/secrets/
+.dockerignore.local
+
+# ============================================================
+# KUBERNETES / K8S
+# ============================================================
+# Secret manifests — never commit real secrets
+k8s/secrets/
+k8s/**/secret*.yaml
+k8s/**/secret*.yml
+kubernetes/secrets/
+kubernetes/**/secret*.yaml
+kubernetes/**/secret*.yml
+helm/**/secret*.yaml
+helm/**/secret*.yml
+
+# Helm
+charts/*.tgz
+.helm/
+
+# Kubeconfig
+kubeconfig
+kubeconfig.yaml
+.kube/
+
+# ============================================================
+# ENVIRONMENT & SECRETS
+# ============================================================
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+*.keystore
+*.truststore
+secrets/
+credentials/
+*.secret
+
+# ============================================================
+# LOGS
+# ============================================================
+logs/
+*.log
+*.log.*
+log/
+spring.log
+
+# ============================================================
+# OS GENERATED
+# ============================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ============================================================
+# TESTING & COVERAGE
+# ============================================================
+test-results/
+test-output/
+coverage/
+*.exec
+jacoco.exec
+surefire-reports/
+
+# ============================================================
+# MISC / TEMP
+# ============================================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+.cache/
+tmp/
+temp/
