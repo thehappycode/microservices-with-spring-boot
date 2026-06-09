@@ -51,4 +51,16 @@ spring init \
 --version=1.0.0-SNAPSHOT \
 product-composite-service
 
+spring init \
+--boot-version=4.0.6 \
+--type=gradle-project \
+--java-version=21 \
+--packaging=jar \
+--name=api \
+--package-name=com.thehappycode.api \
+--groupId=com.thehappycode.api \
+--dependencies=webflux \
+--version=1.0.0-SNAPSHOT \
+api
+
 cd ..
