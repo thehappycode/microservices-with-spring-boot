@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface RecommendationService {
 
     /**
-     * Lấy danh sách recommendation theo productId
+     * Lấy danh sách Recommendation theo productId
      * 
      * @param productId
      * @return List<Recommendation>
