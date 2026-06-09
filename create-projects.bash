@@ -63,4 +63,16 @@ spring init \
 --version=1.0.0-SNAPSHOT \
 api
 
+spring init \
+--boot-version=4.0.6 \
+--type=gradle-project \
+--java-version=21 \
+--packaging=jar \
+--name=util \
+--package-name=com.thehappycode.util \
+--groupId=com.thehappycode.util \
+--dependencies=webflux \
+--version=1.0.0-SNAPSHOT \
+util
+
 cd ..
