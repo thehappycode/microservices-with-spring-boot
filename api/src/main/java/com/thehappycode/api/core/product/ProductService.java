@@ -7,12 +7,10 @@ public interface ProductService {
 
     /**
      * Lấy Product theo productId
+     * 
      * @param productId
-     * @return
+     * @return Product
      */
-    @GetMapping(
-        value = "/product/{productId}",
-        produces = "application/json"
-    )
+    @GetMapping(value = "/product/{productId}", produces = "application/json")
     Product getProduct(@PathVariable int productId);
 }
