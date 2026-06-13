@@ -1,0 +1,72 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch: product-service",
+      "request": "launch",
+      "mainClass": "com.thehappycode.microservices.core.product.ProductServiceApplication",
+      "projectName": "product-service"
+    },
+    {
+      "type": "java",
+      "name": "Launch: recommendation-service",
+      "request": "launch",
+      "mainClass": "com.thehappycode.microservices.core.recommendation.RecommendationServiceApplication",
+      "projectName": "recommendation-service"
+    },
+    {
+      "type": "java",
+      "name": "Launch: review-service",
+      "request": "launch",
+      "mainClass": "com.thehappycode.microservices.core.review.ReviewServiceApplication",
+      "projectName": "review-service"
+    },
+    {
+      "type": "java",
+      "name": "Launch: product-composite-service",
+      "request": "launch",
+      "mainClass": "com.thehappycode.microservices.composite.product.ProductCompositeServiceApplication",
+      "projectName": "product-composite-service"
+    },
+    {
+      "type": "java",
+      "name": "Attach: product-service (port 5005)",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 5005
+    },
+    {
+      "type": "java",
+      "name": "Attach: recommendation-service (port 5006)",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 5006
+    },
+    {
+      "type": "java",
+      "name": "Attach: review-service (port 5007)",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 5007
+    },
+    {
+      "type": "java",
+      "name": "Attach: product-composite-service (port 5008)",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 5008
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch: All Services",
+      "configurations": [
+        "Launch: product-service",
+        "Launch: recommendation-service",
+        "Launch: review-service",
+        "Launch: product-composite-service"
+      ]
+    }
+  ]
+}
