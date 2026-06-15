@@ -1,12 +1,12 @@
 package com.thehappycode.api.core.review;
 
 public class Review {
-    private final int productId;
-    private final int reviewId;
-    private final String author;
-    private final String subject;
-    private final String content;
-    private final String serviceAddress;
+    private int productId;
+    private int reviewId;
+    private String author;
+    private String subject;
+    private String content;
+    private String serviceAddress;
 
     public Review() {
         productId = 0;

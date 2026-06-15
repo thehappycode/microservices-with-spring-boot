@@ -2,7 +2,7 @@ spring:
   application:
     name: review-service
 server:
-  port: 7003
+  port: 8992
   error:
     include-message: always
 

@@ -16,3 +16,7 @@ $./gradlew :microservices:product-service:build -x test;
 ### Kill port
 
 > kill -9 $(lsof -ti:<port>)
+
+### Refresh dependencies
+
+> ./gradlew clean build --refresh-dependencies

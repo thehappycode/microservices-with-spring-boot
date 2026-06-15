@@ -2,7 +2,7 @@ spring:
   application:
     name: recommendation-service
 server:
-  port: 7002
+  port: 8991
   error:
     include-message: always
 

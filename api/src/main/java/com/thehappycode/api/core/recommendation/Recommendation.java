@@ -2,12 +2,12 @@ package com.thehappycode.api.core.recommendation;
 
 public class Recommendation {
 
-    private final int productId;
-    private final int recommendationId;
-    private final String author;
-    private final int rate;
-    private final String content;
-    private final String serviceAddress;
+    private int productId;
+    private int recommendationId;
+    private String author;
+    private int rate;
+    private String content;
+    private String serviceAddress;
 
     public Recommendation() {
         productId = 0;

@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
      * @return Product
      */
     @Override
-    public Product getProduct(@PathVariable int productId) {
+    public Product getProduct(int productId) {
         LOG.debug("/product return the found product for productId={}", productId);
 
         if (productId < 1) {

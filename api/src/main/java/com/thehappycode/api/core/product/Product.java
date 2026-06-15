@@ -4,10 +4,10 @@ package com.thehappycode.api.core.product;
  * Product Object, a plain java object (POJO) that represents the product
  */
 public class Product {
-    private final int productId;
-    private final String name;
-    private final int weight;
-    private final String serviceAddress;
+    private int productId;
+    private String name;
+    private int weight;
+    private String serviceAddress;
 
     public Product() {
         this.productId = 0;
@@ -21,7 +21,7 @@ public class Product {
         this.name = name;
         this.weight = weight;
         this.serviceAddress = serviceAddress;
-        
+
     }
 
     public int getProductId() {

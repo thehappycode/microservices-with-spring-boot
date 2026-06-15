@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: product-composite-service
+server:
+  port: 8989
+  error:
+    include-message: always
+
+app:
+  product-service:
+    host: localhost
+    port: 8990
+  recommendation-service:
+    host: localhost
+    port: 8991
+  review-service:
+    host: localhost
+    port: 8992
+
+logging:
+  level:
+    root: INFO
+    com.thehappycode: DEBUG
