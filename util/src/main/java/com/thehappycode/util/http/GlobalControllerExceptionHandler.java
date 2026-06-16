@@ -1,5 +1,6 @@
 package com.thehappycode.util.http;
 
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT;
 
@@ -13,11 +14,19 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.server.ServerWebInputException;
 
 @RestControllerAdvice
 public class GlobalControllerExceptionHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(GlobalControllerExceptionHandler.class);
+
+    @ResponseStatus(BAD_REQUEST)
+    @ExceptionHandler(ServerWebInputException.class)
+    public @ResponseBody HttpErrorInfo handleServerWebInputException(
+            ServerHttpRequest request, ServerWebInputException ex) {
+        return createHttpErrorInfo(BAD_REQUEST, request, new RuntimeException("Type mismatch."));
+    }
 
     @ResponseStatus(NOT_FOUND)
     @ExceptionHandler(NotFoundException.class)

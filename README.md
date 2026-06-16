@@ -20,3 +20,7 @@ $./gradlew :microservices:product-service:build -x test;
 ### Refresh dependencies
 
 > ./gradlew clean build --refresh-dependencies
+
+### CURL
+
+❯ curl http://localhost:8989/product-composite/1 -s | jq .
