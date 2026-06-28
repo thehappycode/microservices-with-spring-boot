@@ -64,3 +64,41 @@ Test
 > echo 'new byte[100_000_000]' | docker run -i --rm -m=1024M eclipse-temurin:21 jshell -q
 
 > echo 'new byte[500_000_000]' | docker run -i --rm -m=1024M eclipse-temurin:21 jshell -q
+
+#### Docker build
+
+> docker build -f ./microservices/product-service/Dockerfile -t product-service ./microservices/product-service
+
+#### Find images
+
+> docker images | grep product-service
+
+#### Docker run
+
+> docker run -d --rm -p8080:8080 -e "SPRING_PROFILES_ACTIVE=docker" --name prd-srv product-service
+
+#### Docker view log
+
+> docker logs prd-srv -f --tail 0
+
+> docker log prd-srv -f --since 5m
+
+#### Docker remove
+
+> docker rm -f my-prd-srv
+
+#### Docker compose build
+
+> docker-compose build;
+> docker-compose build --no-cache
+
+#### Docker compose up
+
+> docker-compose up -d
+
+#### Docker compose logs;
+
+> docker logs -f <container>
+> docker-compose logs -f
+> docker-compose logs -f --tail 0
+> docker-compose logs -f --since 5

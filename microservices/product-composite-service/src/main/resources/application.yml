@@ -21,6 +21,7 @@ logging:
   level:
     root: INFO
     com.thehappycode: DEBUG
+
 ---
 spring:
   config:
