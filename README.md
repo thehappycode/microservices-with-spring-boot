@@ -27,6 +27,11 @@ $./gradlew :microservices:product-service:build -x test;
 
 ### Docker
 
+#### Start docker 
+
+> sudo systemctl enable --now docker
+> systemctl enable --now docker
+
 #### Xoá hết tất cả container.
 
 > docker rm -f $(docker ps -aq)
