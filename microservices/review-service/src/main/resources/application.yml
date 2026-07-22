@@ -1,6 +1,16 @@
 spring:
   application:
     name: review-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost/review-db
+    username: user
+    password: pwd
+    hikari:
+      initializationFailTimeout: 60000
+
 server:
   port: 8992
   error:
@@ -8,13 +18,20 @@ server:
 
 logging:
   level:
-    root: INFO
-    com.thehappycode: DEBUG
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
 
 ---
 spring:
   config:
     activate:
       on-profile: docker
+  datasource:
+    url: jdbc:mysql://mysql/review-db
 server:
   port: 8080

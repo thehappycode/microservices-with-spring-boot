@@ -5,8 +5,15 @@
 ### Build
 
 ```gradlew
-$./gradlew build -x test;
-$./gradlew :microservices:product-service:build -x test;
+$ ./gradlew build -x test;
+$ ./gradlew :microservices:product-service:build -x test;
+```
+
+### Tests
+
+```gradlew
+$ ./gradlew microservices:product-service:test --tests;
+$ ./gradlew microservices:product-service:test --tests PersistenceTests
 ```
 
 ### Run
@@ -27,7 +34,7 @@ $./gradlew :microservices:product-service:build -x test;
 
 ### Docker
 
-#### Start docker 
+#### Start docker
 
 > sudo systemctl enable --now docker
 > systemctl enable --now docker
@@ -107,3 +114,7 @@ Test
 > docker-compose logs -f
 > docker-compose logs -f --tail 0
 > docker-compose logs -f --since 5
+
+### Test
+
+./gradlew microservices:product-service:test --tests PersistenceTests
