@@ -7,16 +7,12 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-class ProductServiceApplicationTests {
-
-	// @Autowired
-	// private WebTestClient client;
+class ProductServiceApplicationTests extends MongoDBTestBase {
 
 	@LocalServerPort
 	private int port;
