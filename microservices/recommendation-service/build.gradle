@@ -23,7 +23,7 @@ repositories {
 
 ext {
 	mapstructVersion = '1.6.3'
-	testcontainersBomVersion = '2.0.5'
+	testcontainersBomVersion = '1.21.4'
 }
 
 dependencies {
@@ -37,13 +37,17 @@ dependencies {
 	compileOnly "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-data-mongodb-test'
+	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
-	implementation platform("org.testcontainers:testcontainers-bom:${testcontainersBomVersion}")
+	testImplementation platform("org.testcontainers:testcontainers-bom:${testcontainersBomVersion}")
 	testImplementation 'org.testcontainers:testcontainers'
 	testImplementation 'org.testcontainers:junit-jupiter'
 	testImplementation 'org.testcontainers:mongodb'
+
+
 }
 
 tasks.named('test') {
