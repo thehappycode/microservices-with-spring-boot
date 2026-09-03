@@ -12,7 +12,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-class RecommendationServiceApplicationTests {
+class RecommendationServiceApplicationTests extends MongoDBTestBase {
 
 	@LocalServerPort
 	private int port;
