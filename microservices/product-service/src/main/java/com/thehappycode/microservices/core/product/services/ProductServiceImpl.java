@@ -1,5 +1,10 @@
 package com.thehappycode.microservices.core.product.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.dao.DuplicateKeyException;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.thehappycode.api.core.product.Product;
 import com.thehappycode.api.core.product.ProductService;
 import com.thehappycode.api.exceptions.InvalidInputException;
@@ -7,13 +12,6 @@ import com.thehappycode.api.exceptions.NotFoundException;
 import com.thehappycode.microservices.core.product.persistence.ProductEntity;
 import com.thehappycode.microservices.core.product.persistence.ProductRepository;
 import com.thehappycode.util.http.ServiceUtil;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProductServiceImpl implements ProductService {
@@ -23,7 +21,6 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository repository;
     private final ProductMapper mapper;
 
-    @Autowired
     public ProductServiceImpl(
         ServiceUtil serviceUtil,
         ProductRepository repository,
@@ -69,6 +66,13 @@ public class ProductServiceImpl implements ProductService {
         if (productId < 1) {
             throw new InvalidInputException("Invalid productId: " + productId);
         }
+        
+        ProductEntity entity = repository.findByProductId(productId)
+            .orElseThrow(() -> new NotFoundException("No product found for productId: " + productId));
+        Product response = mapper.entityToApi(entity);
+        response.setServiceAddress(serviceUtil.getServiceAddress());
+
+
         if (productId == 13) {
             throw new NotFoundException("No product found for productId: " + productId);
         }
