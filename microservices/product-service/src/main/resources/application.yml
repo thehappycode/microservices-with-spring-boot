@@ -1,6 +1,12 @@
 spring:
   application:
     name: product-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: product-db
+
 server:
   port: 8990
   error:
